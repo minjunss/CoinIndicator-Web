@@ -1,0 +1,179 @@
+@import url(https://fonts.googleapis.com/css?family=Ubuntu:600,400,700);
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background: #152b39;
+}
+
+.wrapper {
+  position: relative;
+  top: 145vh;
+  left: -6vh;
+  margin-left: 5vh;
+  transform: translate(-50%, -50%);
+  opacity: 0; /* 초기 상태: 보이지 않음 */
+  transition: opacity 1s ease-in; /* 애니메이션 시간 설정 */
+}
+
+.fade-in {
+  opacity: 1; /* 보이게 설정 */
+}
+
+.fade-out {
+  opacity: 0; /* 보이지 않게 설정 */
+}
+
+.graph-container {
+  margin-top: -152vh;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 80px;
+  justify-content: space-around; /* 그래프 간 간격을 조정 */
+  align-items: flex-start; /* 그래프를 상단에 정렬 */
+  width: 100%; /* 전체 너비 사용 */
+  padding: 260px; /* 여백 추가 */
+  background-color: transparent; /* 투명 배경으로 설정 */
+}
+
+.graph {
+  width: 330px;
+  height: 340px;
+  background: #2c3e50;
+  background-size: 15px;
+  padding: 20px;
+  border-radius: 50px;
+  font-family: "Ubuntu";
+  box-shadow: 2px 5px 20px rgba(0, 0, 0, 0.6);
+  font-weight: bold;
+}
+
+.head-box {
+  background: #2c3e50;
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  position: absolute;
+  color: #d8d8d8;
+  top: -40px;
+  left: 284px;
+  box-shadow: 2px 5px 20px rgba(0, 0, 0, 0.6);
+  transition: all 300ms cubic-bezier(0.8, 0.79, 0.51, 1.31);
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  flex-flow: space-around;
+  align-items: center;
+  text-align: center;
+  font-weight: bold;
+}
+
+.head-box:hover {
+  cursor: pointer;
+}
+
+.max {
+  transform: translate(0, 0);
+  top: 0;
+  left: 0;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  border-radius: 50px;
+  transition: all 300ms ease-in-out;
+  font-size: 4em;
+  color: #d8d8d8;
+}
+
+.fa-bar-chart {
+  font-size: 2em;
+  display: block;
+}
+
+.bars-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.bar-container {
+  display: flex;
+  align-items: center; /* 세로 정렬 */
+  margin-bottom: -23px; /* 막대 간 여백 */
+}
+
+.bar {
+  padding: 5px;
+  margin: 20px 0;
+  width: 10%;
+  background: linear-gradient(90deg, #33af9e, #204056);
+  white-space: nowrap;
+  overflow: hidden;
+  border-radius: 3px;
+  color: white;
+  font-size: 1em;
+  font-weight: bold;
+  text-align: left;
+  box-shadow: 2px 5px 5px rgba(0, 0, 0, 0.2);
+  transition: all 600ms cubic-bezier(0.8, 0.79, 0.51, 1.31);
+  margin-right: 10px;
+}
+
+@media (max-width: 600px) {
+  .bar {
+    font-size: 0.7rem; /* 작은 화면에서는 더 작은 글자 크기 */
+  }
+}
+
+.one {
+  width: 60%;
+  transition: all 300ms cubic-bezier(0.8, 0.79, 0.51, 1.31);
+  transition-delay: 100ms;
+}
+
+.two {
+  width: 40%;
+  transition: all 300ms cubic-bezier(0.8, 0.79, 0.51, 1.31);
+  transition-delay: 150ms;
+}
+
+.three {
+  width: 50%;
+  transition: all 300ms cubic-bezier(0.8, 0.79, 0.51, 1.31);
+  transition-delay: 200ms;
+}
+
+.four {
+  width: 90%;
+  transition: all 300ms cubic-bezier(0.8, 0.79, 0.51, 1.31);
+  transition-delay: 250ms;
+}
+
+.five {
+  width: 70%;
+  transition: all 300ms cubic-bezier(0.8, 0.79, 0.51, 1.31);
+  transition-delay: 300ms;
+}
+
+.interval-label {
+  font-size: 0.9em;
+  color: #ffffff; /* 필요에 따라 조정 */
+}
+
+.tooltip-text {
+  visibility: visible; /* 항상 보이도록 설정 */
+  width: auto; /* 너비 자동 조절 */
+  background-color: black; /* 툴팁 배경색 */
+  color: #fff; /* 텍스트 색상 */
+  text-align: center; /* 텍스트 중앙 정렬 */
+  border-radius: 5px; /* 둥근 모서리 */
+  padding: 5px; /* 내부 여백 */
+  z-index: 1; /* 다른 요소 위에 표시 */
+  opacity: 0.9; /* 약간의 투명도 */
+  transition: opacity 0.3s; /* 부드러운 전환 효과 */
+  pointer-events: none; /* 툴팁 위에서의 마우스 이벤트 방지 */
+}
+
+.bar-container:hover .tooltip-text {
+  opacity: 1; /* 마우스 오버 시 완전히 불투명하게 설정 */
+}

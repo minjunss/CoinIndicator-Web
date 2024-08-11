@@ -1,0 +1,21 @@
+.bg-dark {
+  --bs-bg-opacity: 0;
+  background-color: rgb(13 17 25) !important;
+}
+
+.btn-outline-light {
+  --bs-btn-border-color: rgb(0, 0, 0, 0);
+  --bs-btn-hover-bg: rgb(0, 0, 0, 0);
+  --bs-btn-hover-border-color: rgb(0, 0, 0, 0);
+  --bs-btn-active-bg: rgb(0, 0, 0, 0);
+  --bs-btn-active-border-color: rgb(0, 0, 0, 0);
+}
+
+.offcanvas {
+  color: whitesmoke;
+  background-color: #0a151c;
+}
+
+.offcanvas-backdrop {
+  position: relative;
+}
